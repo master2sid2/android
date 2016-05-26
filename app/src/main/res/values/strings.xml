@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Finance</string>
+    <string name="Data">Дата:</string>
+    <string name="sum">Сума:</string>
+    <string name="Calculate">Посчитать</string>
+    <string name="Add">Добавить</string>
+</resources>
