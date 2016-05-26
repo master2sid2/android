@@ -10,6 +10,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     Day newDay = new Day();
@@ -22,30 +28,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void setBal(View v) {
 
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
+
         EditText myDatesField = (EditText) findViewById(R.id.datesField);
         EditText MySumField = (EditText)findViewById(R.id.sumField);
-
         TextView MyDataTextView = (TextView)findViewById(R.id.dataTextView);
-
-        assert myDatesField != null;
-        String s = myDatesField.getText().toString();
         assert MySumField != null;
         String sum = MySumField.getText().toString();
         float f = 0.0f;
         if(!sum.equals("")){
             f = Float.parseFloat(MySumField.getText().toString());
         }
-        newDay.setDates("test",f);
-        assert MyDataTextView != null;
-        MyDataTextView.setText(String.valueOf(newDay.dates.size()));
+        assert myDatesField != null;
+        newDay.setDates(dateFormat.format(date),f,myDatesField.getText().toString());
     }
 
     public void getBal(View v)  {
+
         TextView MyDataTextView = (TextView)findViewById(R.id.dataTextView);
         TextView MySumTextView = (TextView)findViewById(R.id.sumTextView);
 
         assert MySumTextView != null;
         MySumTextView.setText(String.valueOf(newDay.getSum()));
+        assert MyDataTextView != null;
+        MyDataTextView.setText(newDay.getDates());
     }
 
     @Override

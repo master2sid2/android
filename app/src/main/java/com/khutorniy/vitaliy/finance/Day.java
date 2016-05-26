@@ -11,10 +11,6 @@ import java.util.Objects;
  */
 public class Day {
 
-    protected String description;
-    protected float genBalance;
-    protected float curBalance;
-    //private Param param = new Param();
 
     public List<Param> dates = new ArrayList<>();
 
@@ -22,17 +18,21 @@ public class Day {
 
     }
 
-    public void setDates(String date, float sum){
+    public void setDates(String date, float sum, String desc){
 
         Param param = new Param();
 
-        param.setData(date,sum);
+        param.setData(date,sum,desc);
         this.dates.add(param);
     }
 
-    //public String getDates(){
-    //
-    //}
+    public String getDates(){
+        return dates.get(0).getData();
+    }
+
+    public String getDesc(){
+        return dates.get(0).getDesc();
+    }
 
     public float getSum(){
         float sum = 0;

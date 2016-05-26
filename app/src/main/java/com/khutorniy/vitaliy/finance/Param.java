@@ -7,14 +7,16 @@ public class Param {
 
     private String data;
     private float sum;
+    private String description;
 
     Param (){
 
     }
 
-    public void setData(String data, float sum) {
+    public void setData(String data, float sum, String desc) {
         this.data = data;
         this.sum = sum;
+        this.description = desc;
     }
 
     public String getData() {
@@ -23,5 +25,9 @@ public class Param {
 
     public float getSum() {
         return sum;
+    }
+
+    public String getDesc(){
+        return this.description;
     }
 }
