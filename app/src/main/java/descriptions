@@ -1,0 +1,7 @@
+Конвертирование и вывод баланса
+        String str = et.getText().toString();
+        if(!str.equals("")){
+                float f = Float.parseFloat(et.getText().toString());
+                item.setBalance(f);
+        }
+

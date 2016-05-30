@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.khutorniy.vitaliy.finance.MainActivity"
+    android:clickable="false">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Add"
+        android:id="@+id/setButton"
+        android:onClick="setBal"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/sumTextView"
+        android:layout_toLeftOf="@+id/getButton"
+        android:layout_toStartOf="@+id/getButton" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datesField"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:maxLines="1"
+        android:lines="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Data"
+        android:id="@+id/dataTextView"
+        android:textSize="32sp"
+        android:layout_below="@+id/sumField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_toLeftOf="@+id/getButton"
+        android:layout_toStartOf="@+id/getButton" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sumField"
+        android:layout_below="@+id/datesField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/datesField"
+        android:layout_alignEnd="@+id/datesField"
+        android:inputType="numberDecimal"
+        android:maxLines="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/sum"
+        android:id="@+id/sumTextView"
+        android:layout_below="@+id/dataTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/setButton"
+        android:layout_toLeftOf="@+id/setButton"
+        android:layout_alignRight="@+id/dataTextView"
+        android:layout_alignEnd="@+id/dataTextView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Calculate"
+        android:id="@+id/getButton"
+        android:layout_alignTop="@+id/setButton"
+        android:layout_alignRight="@+id/sumField"
+        android:layout_alignEnd="@+id/sumField"
+        android:layout_marginRight="50dp"
+        android:layout_marginEnd="50dp"
+        android:onClick="getBal" />
+</RelativeLayout>
